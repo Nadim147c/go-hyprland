@@ -158,7 +158,7 @@ func (l *EventListener) OnAllEvents(fn OnAllEventsFunc) {
 func (l *EventListener) OnWorkspace(fn OnWorkspaceFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[Workspace] = none
+	l.subscribed[EventWorkspace] = none
 	l.onWorkspace = fn
 }
 
@@ -166,7 +166,7 @@ func (l *EventListener) OnWorkspace(fn OnWorkspaceFunc) {
 func (l *EventListener) OnWorkspaceV2(fn OnWorkspaceV2Func) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[Workspace] = none
+	l.subscribed[EventWorkspace] = none
 	l.onWorkspaceV2 = fn
 }
 
@@ -174,7 +174,7 @@ func (l *EventListener) OnWorkspaceV2(fn OnWorkspaceV2Func) {
 func (l *EventListener) OnFocusedMon(fn OnFocusedMonFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[FocusedMon] = none
+	l.subscribed[EventFocusedMonitor] = none
 	l.onFocusedMon = fn
 }
 
@@ -182,7 +182,7 @@ func (l *EventListener) OnFocusedMon(fn OnFocusedMonFunc) {
 func (l *EventListener) OnFocusedMonV2(fn OnFocusedMonV2Func) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[FocusedMonV2] = none
+	l.subscribed[EventFocusedMonitorV2] = none
 	l.onFocusedMonV2 = fn
 }
 
@@ -190,7 +190,7 @@ func (l *EventListener) OnFocusedMonV2(fn OnFocusedMonV2Func) {
 func (l *EventListener) OnActiveWindow(fn OnActiveWindowFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[ActiveWindow] = none
+	l.subscribed[EventActiveWindow] = none
 	l.onActiveWindow = fn
 }
 
@@ -198,7 +198,7 @@ func (l *EventListener) OnActiveWindow(fn OnActiveWindowFunc) {
 func (l *EventListener) OnActiveWindowV2(fn OnActiveWindowV2Func) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[ActiveWindowV2] = none
+	l.subscribed[EventActiveWindowV2] = none
 	l.onActiveWindowV2 = fn
 }
 
@@ -206,7 +206,7 @@ func (l *EventListener) OnActiveWindowV2(fn OnActiveWindowV2Func) {
 func (l *EventListener) OnFullscreen(fn OnFullscreenFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[Fullscreen] = none
+	l.subscribed[EventFullscreen] = none
 	l.onFullscreen = fn
 }
 
@@ -214,7 +214,7 @@ func (l *EventListener) OnFullscreen(fn OnFullscreenFunc) {
 func (l *EventListener) OnMonitorRemoved(fn OnMonitorRemovedFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[MonitorRemoved] = none
+	l.subscribed[EventMonitorRemoved] = none
 	l.onMonitorRemoved = fn
 }
 
@@ -222,7 +222,7 @@ func (l *EventListener) OnMonitorRemoved(fn OnMonitorRemovedFunc) {
 func (l *EventListener) OnMonitorRemovedV2(fn OnMonitorRemovedV2Func) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[MonitorRemovedV2] = none
+	l.subscribed[EventMonitorRemovedV2] = none
 	l.onMonitorRemovedV2 = fn
 }
 
@@ -230,7 +230,7 @@ func (l *EventListener) OnMonitorRemovedV2(fn OnMonitorRemovedV2Func) {
 func (l *EventListener) OnMonitorAdded(fn OnMonitorAddedFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[MonitorAdded] = none
+	l.subscribed[EventMonitorAdded] = none
 	l.onMonitorAdded = fn
 }
 
@@ -238,7 +238,7 @@ func (l *EventListener) OnMonitorAdded(fn OnMonitorAddedFunc) {
 func (l *EventListener) OnMonitorAddedV2(fn OnMonitorAddedV2Func) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[MonitorAddedV2] = none
+	l.subscribed[EventMonitorAddedV2] = none
 	l.onMonitorAddedV2 = fn
 }
 
@@ -246,7 +246,7 @@ func (l *EventListener) OnMonitorAddedV2(fn OnMonitorAddedV2Func) {
 func (l *EventListener) OnCreateWorkspace(fn OnCreateWorkspaceFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[CreateWorkspace] = none
+	l.subscribed[EventCreateWorkspace] = none
 	l.onCreateWorkspace = fn
 }
 
@@ -254,7 +254,7 @@ func (l *EventListener) OnCreateWorkspace(fn OnCreateWorkspaceFunc) {
 func (l *EventListener) OnCreateWorkspaceV2(fn OnCreateWorkspaceV2Func) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[CreateWorkspaceV2] = none
+	l.subscribed[EventCreateWorkspaceV2] = none
 	l.onCreateWorkspaceV2 = fn
 }
 
@@ -262,7 +262,7 @@ func (l *EventListener) OnCreateWorkspaceV2(fn OnCreateWorkspaceV2Func) {
 func (l *EventListener) OnDestroyWorkspace(fn OnDestroyWorkspaceFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[DestroyWorkspace] = none
+	l.subscribed[EventDestroyWorkspace] = none
 	l.onDestroyWorkspace = fn
 }
 
@@ -270,7 +270,7 @@ func (l *EventListener) OnDestroyWorkspace(fn OnDestroyWorkspaceFunc) {
 func (l *EventListener) OnDestroyWorkspaceV2(fn OnDestroyWorkspaceV2Func) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[DestroyWorkspaceV2] = none
+	l.subscribed[EventDestroyWorkspaceV2] = none
 	l.onDestroyWorkspaceV2 = fn
 }
 
@@ -278,7 +278,7 @@ func (l *EventListener) OnDestroyWorkspaceV2(fn OnDestroyWorkspaceV2Func) {
 func (l *EventListener) OnMoveWorkspace(fn OnMoveWorkspaceFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[MoveWorkspace] = none
+	l.subscribed[EventMoveWorkspace] = none
 	l.onMoveWorkspace = fn
 }
 
@@ -286,7 +286,7 @@ func (l *EventListener) OnMoveWorkspace(fn OnMoveWorkspaceFunc) {
 func (l *EventListener) OnMoveWorkspaceV2(fn OnMoveWorkspaceV2Func) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[MoveWorkspaceV2] = none
+	l.subscribed[EventMoveWorkspaceV2] = none
 	l.onMoveWorkspaceV2 = fn
 }
 
@@ -294,7 +294,7 @@ func (l *EventListener) OnMoveWorkspaceV2(fn OnMoveWorkspaceV2Func) {
 func (l *EventListener) OnRenameWorkspace(fn OnRenameWorkspaceFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[RenameWorkspace] = none
+	l.subscribed[EventRenameWorkspace] = none
 	l.onRenameWorkspace = fn
 }
 
@@ -302,7 +302,7 @@ func (l *EventListener) OnRenameWorkspace(fn OnRenameWorkspaceFunc) {
 func (l *EventListener) OnActiveSpecial(fn OnActiveSpecialFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[ActiveSpecial] = none
+	l.subscribed[EventActiveSpecial] = none
 	l.onActiveSpecial = fn
 }
 
@@ -310,7 +310,7 @@ func (l *EventListener) OnActiveSpecial(fn OnActiveSpecialFunc) {
 func (l *EventListener) OnActiveSpecialV2(fn OnActiveSpecialV2Func) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[ActiveSpecialV2] = none
+	l.subscribed[EventActiveSpecialV2] = none
 	l.onActiveSpecialV2 = fn
 }
 
@@ -318,7 +318,7 @@ func (l *EventListener) OnActiveSpecialV2(fn OnActiveSpecialV2Func) {
 func (l *EventListener) OnActiveLayout(fn OnActiveLayoutFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[ActiveLayout] = none
+	l.subscribed[EventActiveLayout] = none
 	l.onActiveLayout = fn
 }
 
@@ -326,7 +326,7 @@ func (l *EventListener) OnActiveLayout(fn OnActiveLayoutFunc) {
 func (l *EventListener) OnOpenWindow(fn OnOpenWindowFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[OpenWindow] = none
+	l.subscribed[EventOpenWindow] = none
 	l.onOpenWindow = fn
 }
 
@@ -334,7 +334,7 @@ func (l *EventListener) OnOpenWindow(fn OnOpenWindowFunc) {
 func (l *EventListener) OnCloseWindow(fn OnCloseWindowFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[CloseWindow] = none
+	l.subscribed[EventCloseWindow] = none
 	l.onCloseWindow = fn
 }
 
@@ -342,7 +342,7 @@ func (l *EventListener) OnCloseWindow(fn OnCloseWindowFunc) {
 func (l *EventListener) OnMoveWindow(fn OnMoveWindowFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[MoveWindow] = none
+	l.subscribed[EventMoveWindow] = none
 	l.onMoveWindow = fn
 }
 
@@ -350,7 +350,7 @@ func (l *EventListener) OnMoveWindow(fn OnMoveWindowFunc) {
 func (l *EventListener) OnMoveWindowV2(fn OnMoveWindowV2Func) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[MoveWindowV2] = none
+	l.subscribed[EventMoveWindowV2] = none
 	l.onMoveWindowV2 = fn
 }
 
@@ -358,7 +358,7 @@ func (l *EventListener) OnMoveWindowV2(fn OnMoveWindowV2Func) {
 func (l *EventListener) OnOpenLayer(fn OnOpenLayerFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[OpenLayer] = none
+	l.subscribed[EventOpenLayer] = none
 	l.onOpenLayer = fn
 }
 
@@ -366,7 +366,7 @@ func (l *EventListener) OnOpenLayer(fn OnOpenLayerFunc) {
 func (l *EventListener) OnCloseLayer(fn OnCloseLayerFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[CloseLayer] = none
+	l.subscribed[EventCloseLayer] = none
 	l.onCloseLayer = fn
 }
 
@@ -374,7 +374,7 @@ func (l *EventListener) OnCloseLayer(fn OnCloseLayerFunc) {
 func (l *EventListener) OnSubmap(fn OnSubmapFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[Submap] = none
+	l.subscribed[EventSubmap] = none
 	l.onSubmap = fn
 }
 
@@ -382,7 +382,7 @@ func (l *EventListener) OnSubmap(fn OnSubmapFunc) {
 func (l *EventListener) OnChangeFloatingMode(fn OnChangeFloatingModeFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[ChangeFloatingMode] = none
+	l.subscribed[EventChangeFloatingMode] = none
 	l.onChangeFloatingMode = fn
 }
 
@@ -390,7 +390,7 @@ func (l *EventListener) OnChangeFloatingMode(fn OnChangeFloatingModeFunc) {
 func (l *EventListener) OnUrgent(fn OnUrgentFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[Urgent] = none
+	l.subscribed[EventUrgent] = none
 	l.onUrgent = fn
 }
 
@@ -398,7 +398,7 @@ func (l *EventListener) OnUrgent(fn OnUrgentFunc) {
 func (l *EventListener) OnScreencast(fn OnScreencastFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[Screencast] = none
+	l.subscribed[EventScreencast] = none
 	l.onScreencast = fn
 }
 
@@ -406,7 +406,7 @@ func (l *EventListener) OnScreencast(fn OnScreencastFunc) {
 func (l *EventListener) OnWindowTitle(fn OnWindowTitleFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[WindowTitle] = none
+	l.subscribed[EventWindowTitle] = none
 	l.onWindowTitle = fn
 }
 
@@ -414,7 +414,7 @@ func (l *EventListener) OnWindowTitle(fn OnWindowTitleFunc) {
 func (l *EventListener) OnWindowTitleV2(fn OnWindowTitleV2Func) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[WindowTitleV2] = none
+	l.subscribed[EventWindowTitleV2] = none
 	l.onWindowTitleV2 = fn
 }
 
@@ -422,7 +422,7 @@ func (l *EventListener) OnWindowTitleV2(fn OnWindowTitleV2Func) {
 func (l *EventListener) OnToggleGroup(fn OnToggleGroupFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[ToggleGroup] = none
+	l.subscribed[EventToggleGroup] = none
 	l.onToggleGroup = fn
 }
 
@@ -430,7 +430,7 @@ func (l *EventListener) OnToggleGroup(fn OnToggleGroupFunc) {
 func (l *EventListener) OnMoveIntoGroup(fn OnMoveIntoGroupFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[MoveIntoGroup] = none
+	l.subscribed[EventMoveIntoGroup] = none
 	l.onMoveIntoGroup = fn
 }
 
@@ -438,7 +438,7 @@ func (l *EventListener) OnMoveIntoGroup(fn OnMoveIntoGroupFunc) {
 func (l *EventListener) OnMoveOutOfGroup(fn OnMoveOutOfGroupFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[MoveOutOfGroup] = none
+	l.subscribed[EventMoveOutOfGroup] = none
 	l.onMoveOutOfGroup = fn
 }
 
@@ -446,7 +446,7 @@ func (l *EventListener) OnMoveOutOfGroup(fn OnMoveOutOfGroupFunc) {
 func (l *EventListener) OnIgnoreGroupLock(fn OnIgnoreGroupLockFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[IgnoreGroupLock] = none
+	l.subscribed[EventIgnoreGroupLock] = none
 	l.onIgnoreGroupLock = fn
 }
 
@@ -454,7 +454,7 @@ func (l *EventListener) OnIgnoreGroupLock(fn OnIgnoreGroupLockFunc) {
 func (l *EventListener) OnLockGroups(fn OnLockGroupsFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[LockGroups] = none
+	l.subscribed[EventLockGroups] = none
 	l.onLockGroups = fn
 }
 
@@ -462,7 +462,7 @@ func (l *EventListener) OnLockGroups(fn OnLockGroupsFunc) {
 func (l *EventListener) OnConfigReloaded(fn OnConfigReloadedFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[ConfigReloaded] = none
+	l.subscribed[EventConfigReloaded] = none
 	l.onConfigReloaded = fn
 }
 
@@ -470,7 +470,7 @@ func (l *EventListener) OnConfigReloaded(fn OnConfigReloadedFunc) {
 func (l *EventListener) OnPin(fn OnPinFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[Pin] = none
+	l.subscribed[EventPin] = none
 	l.onPin = fn
 }
 
@@ -478,7 +478,7 @@ func (l *EventListener) OnPin(fn OnPinFunc) {
 func (l *EventListener) OnMinimized(fn OnMinimizedFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[Minimized] = none
+	l.subscribed[EventMinimized] = none
 	l.onMinimized = fn
 }
 
@@ -486,7 +486,7 @@ func (l *EventListener) OnMinimized(fn OnMinimizedFunc) {
 func (l *EventListener) OnBell(fn OnBellFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[Bell] = none
+	l.subscribed[EventBell] = none
 	l.onBell = fn
 }
 
@@ -494,7 +494,7 @@ func (l *EventListener) OnBell(fn OnBellFunc) {
 func (l *EventListener) OnUnknown(fn OnUnknownFunc) {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	l.subscribed[Bell] = none
+	l.subscribed[EventBell] = none
 	l.onUnknown = fn
 }
 
@@ -564,14 +564,14 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		l.handler.All(ctx)
 	}
 	switch ctx.Event {
-	case Workspace:
+	case EventWorkspace:
 		if l.onWorkspace != nil {
 			l.onWorkspace(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.Workspace(ctx, ctx.RawData)
 		}
-	case WorkspaceV2:
+	case EventWorkspaceV2:
 		id, name, err := cast2[int, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -582,7 +582,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.WorkspaceV2(ctx, id, name)
 		}
-	case FocusedMon:
+	case EventFocusedMonitor:
 		mon, name, err := cast2[string, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -593,7 +593,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.FocusedMon(ctx, mon, name)
 		}
-	case FocusedMonV2:
+	case EventFocusedMonitorV2:
 		mon, id, err := cast2[string, int](ctx.RawData)
 		if err != nil {
 			return err
@@ -604,7 +604,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.FocusedMonV2(ctx, mon, id)
 		}
-	case ActiveWindow:
+	case EventActiveWindow:
 		class, title, err := cast2[string, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -615,14 +615,14 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.ActiveWindow(ctx, class, title)
 		}
-	case ActiveWindowV2:
+	case EventActiveWindowV2:
 		if l.onActiveWindowV2 != nil {
 			l.onActiveWindowV2(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.ActiveWindowV2(ctx, ctx.RawData)
 		}
-	case Fullscreen:
+	case EventFullscreen:
 		fullscreen, err := cast[bool](ctx.RawData)
 		if err != nil {
 			return err
@@ -633,14 +633,14 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.Fullscreen(ctx, fullscreen)
 		}
-	case MonitorRemoved:
+	case EventMonitorRemoved:
 		if l.onMonitorRemoved != nil {
 			l.onMonitorRemoved(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.MonitorRemoved(ctx, ctx.RawData)
 		}
-	case MonitorRemovedV2:
+	case EventMonitorRemovedV2:
 		id, name, desc, err := cast3[int, string, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -651,14 +651,14 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.MonitorRemovedV2(ctx, id, name, desc)
 		}
-	case MonitorAdded:
+	case EventMonitorAdded:
 		if l.onMonitorAdded != nil {
 			l.onMonitorAdded(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.MonitorAdded(ctx, ctx.RawData)
 		}
-	case MonitorAddedV2:
+	case EventMonitorAddedV2:
 		id, name, desc, err := cast3[int, string, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -669,14 +669,14 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.MonitorAddedV2(ctx, id, name, desc)
 		}
-	case CreateWorkspace:
+	case EventCreateWorkspace:
 		if l.onCreateWorkspace != nil {
 			l.onCreateWorkspace(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.CreateWorkspace(ctx, ctx.RawData)
 		}
-	case CreateWorkspaceV2:
+	case EventCreateWorkspaceV2:
 		id, name, err := cast2[int, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -687,14 +687,14 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.CreateWorkspaceV2(ctx, id, name)
 		}
-	case DestroyWorkspace:
+	case EventDestroyWorkspace:
 		if l.onDestroyWorkspace != nil {
 			l.onDestroyWorkspace(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.DestroyWorkspace(ctx, ctx.RawData)
 		}
-	case DestroyWorkspaceV2:
+	case EventDestroyWorkspaceV2:
 		id, name, err := cast2[int, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -705,7 +705,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.DestroyWorkspaceV2(ctx, id, name)
 		}
-	case MoveWorkspace:
+	case EventMoveWorkspace:
 		name, mon, err := cast2[string, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -716,7 +716,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.MoveWorkspace(ctx, name, mon)
 		}
-	case MoveWorkspaceV2:
+	case EventMoveWorkspaceV2:
 		id, name, mon, err := cast3[int, string, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -727,7 +727,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.MoveWorkspaceV2(ctx, id, name, mon)
 		}
-	case RenameWorkspace:
+	case EventRenameWorkspace:
 		id, name, err := cast2[int, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -738,7 +738,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.RenameWorkspace(ctx, id, name)
 		}
-	case ActiveSpecial:
+	case EventActiveSpecial:
 		name, mon, err := cast2[string, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -749,7 +749,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.ActiveSpecial(ctx, name, mon)
 		}
-	case ActiveSpecialV2:
+	case EventActiveSpecialV2:
 		id, name, mon, err := cast3[int, string, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -760,7 +760,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.ActiveSpecialV2(ctx, id, name, mon)
 		}
-	case ActiveLayout:
+	case EventActiveLayout:
 		kb, layout, err := cast2[string, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -771,7 +771,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.ActiveLayout(ctx, kb, layout)
 		}
-	case OpenWindow:
+	case EventOpenWindow:
 		addr, workspace, class, title, err := cast4[string, string, string, string](
 			ctx.RawData,
 		)
@@ -784,14 +784,14 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.OpenWindow(ctx, addr, workspace, class, title)
 		}
-	case CloseWindow:
+	case EventCloseWindow:
 		if l.onCloseWindow != nil {
 			l.onCloseWindow(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.CloseWindow(ctx, ctx.RawData)
 		}
-	case MoveWindow:
+	case EventMoveWindow:
 		addr, workspace, err := cast2[string, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -802,7 +802,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.MoveWindow(ctx, addr, workspace)
 		}
-	case MoveWindowV2:
+	case EventMoveWindowV2:
 		addr, id, workspace, err := cast3[string, int, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -813,28 +813,28 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.MoveWindowV2(ctx, addr, id, workspace)
 		}
-	case OpenLayer:
+	case EventOpenLayer:
 		if l.onOpenLayer != nil {
 			l.onOpenLayer(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.OpenLayer(ctx, ctx.RawData)
 		}
-	case CloseLayer:
+	case EventCloseLayer:
 		if l.onCloseLayer != nil {
 			l.onCloseLayer(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.CloseLayer(ctx, ctx.RawData)
 		}
-	case Submap:
+	case EventSubmap:
 		if l.onSubmap != nil {
 			l.onSubmap(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.Submap(ctx, ctx.RawData)
 		}
-	case ChangeFloatingMode:
+	case EventChangeFloatingMode:
 		addr, floating, err := cast2[string, bool](ctx.RawData)
 		if err != nil {
 			return err
@@ -845,14 +845,14 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.ChangeFloatingMode(ctx, addr, floating)
 		}
-	case Urgent:
+	case EventUrgent:
 		if l.onUrgent != nil {
 			l.onUrgent(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.Urgent(ctx, ctx.RawData)
 		}
-	case Screencast:
+	case EventScreencast:
 		state, owner, err := cast2[bool, bool](ctx.RawData)
 		if err != nil {
 			return err
@@ -863,14 +863,14 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.Screencast(ctx, state, owner)
 		}
-	case WindowTitle:
+	case EventWindowTitle:
 		if l.onWindowTitle != nil {
 			l.onWindowTitle(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.WindowTitle(ctx, ctx.RawData)
 		}
-	case WindowTitleV2:
+	case EventWindowTitleV2:
 		addr, title, err := cast2[string, string](ctx.RawData)
 		if err != nil {
 			return err
@@ -881,7 +881,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.WindowTitleV2(ctx, addr, title)
 		}
-	case ToggleGroup:
+	case EventToggleGroup:
 		parts := strings.Split(ctx.RawData, ",")
 		state, err := strconv.ParseBool(parts[0])
 		if err != nil {
@@ -893,21 +893,21 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.ToggleGroup(ctx, state, parts[1:])
 		}
-	case MoveIntoGroup:
+	case EventMoveIntoGroup:
 		if l.onMoveIntoGroup != nil {
 			l.onMoveIntoGroup(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.MoveIntoGroup(ctx, ctx.RawData)
 		}
-	case MoveOutOfGroup:
+	case EventMoveOutOfGroup:
 		if l.onMoveOutOfGroup != nil {
 			l.onMoveOutOfGroup(ctx, ctx.RawData)
 		}
 		if l.handler != nil {
 			l.handler.MoveOutOfGroup(ctx, ctx.RawData)
 		}
-	case IgnoreGroupLock:
+	case EventIgnoreGroupLock:
 		state, err := cast[bool](ctx.RawData)
 		if err != nil {
 			return err
@@ -918,7 +918,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.IgnoreGroupLock(ctx, state)
 		}
-	case LockGroups:
+	case EventLockGroups:
 		state, err := cast[bool](ctx.RawData)
 		if err != nil {
 			return err
@@ -929,14 +929,14 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.LockGroups(ctx, state)
 		}
-	case ConfigReloaded:
+	case EventConfigReloaded:
 		if l.onIgnoreGroupLock != nil {
 			l.onConfigReloaded(ctx)
 		}
 		if l.handler != nil {
 			l.handler.ConfigReloaded(ctx)
 		}
-	case Pin:
+	case EventPin:
 		addr, state, err := cast2[string, bool](ctx.RawData)
 		if err != nil {
 			return err
@@ -947,7 +947,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.Pin(ctx, addr, state)
 		}
-	case Minimized:
+	case EventMinimized:
 		addr, state, err := cast2[string, bool](ctx.RawData)
 		if err != nil {
 			return err
@@ -958,7 +958,7 @@ func (l *EventListener) processEvent(ctx *EventContext) error {
 		if l.handler != nil {
 			l.handler.Minimized(ctx, addr, state)
 		}
-	case Bell:
+	case EventBell:
 		addr, err := cast[string](ctx.RawData)
 		if err != nil {
 			return err

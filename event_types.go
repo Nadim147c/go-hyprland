@@ -4,184 +4,189 @@ package hyprland
 type Event string
 
 const (
-	// Workspace is emitted on workspace change. Only emitted when a user
+	// EventWorkspace is emitted on workspace change. Only emitted when a user
 	// requests a workspace change, not on mouse movements (see focusedmon).
 	// Args: WORKSPACENAME
-	Workspace Event = "workspace"
+	EventWorkspace Event = "workspace"
 
-	// WorkspaceV2 is emitted on workspace change (v2). Only emitted when a user
-	// requests a workspace change, not on mouse movements (see focusedmon).
+	// EventWorkspaceV2 is emitted on workspace change (v2). Only emitted when a
+	// user requests a workspace change, not on mouse movements (see
+	// focusedmon).
 	// Args: WORKSPACEID, WORKSPACENAME
-	WorkspaceV2 Event = "workspacev2"
+	EventWorkspaceV2 Event = "workspacev2"
 
-	// FocusedMon is emitted when the active monitor changes.
+	// EventFocusedMonitor is emitted when the active monitor changes.
 	// Args: MONNAME, WORKSPACENAME
-	FocusedMon Event = "focusedmon"
+	EventFocusedMonitor Event = "focusedmon"
 
-	// FocusedMonV2 is emitted when the active monitor changes (v2).
+	// EventFocusedMonitorV2 is emitted when the active monitor changes (v2).
 	// Args: MONNAME, WORKSPACEID
-	FocusedMonV2 Event = "focusedmonv2"
+	EventFocusedMonitorV2 Event = "focusedmonv2"
 
-	// ActiveWindow is emitted when the active window changes.
+	// EventActiveWindow is emitted when the active window changes.
 	// Args: WINDOWCLASS, WINDOWTITLE
-	ActiveWindow Event = "activewindow"
+	EventActiveWindow Event = "activewindow"
 
-	// ActiveWindowV2 is emitted when the active window changes (v2).
+	// EventActiveWindowV2 is emitted when the active window changes (v2).
 	// Args: WINDOWADDRESS
-	ActiveWindowV2 Event = "activewindowv2"
+	EventActiveWindowV2 Event = "activewindowv2"
 
-	// Fullscreen is emitted when a window's fullscreen status changes.
+	// EventFullscreen is emitted when a window's fullscreen status changes.
 	// Args: 0 (exit fullscreen) / 1 (enter fullscreen)
-	Fullscreen Event = "fullscreen"
+	EventFullscreen Event = "fullscreen"
 
-	// MonitorRemoved is emitted when a monitor is disconnected.
-	// Args: MONITORNAME
-	MonitorRemoved Event = "monitorremoved"
+	// EventMonitorRemoved is emitted when a monitor is disconnected. Args:
+	// MONITORNAME
+	EventMonitorRemoved Event = "monitorremoved"
 
-	// MonitorRemovedV2 is emitted when a monitor is disconnected (v2).
+	// EventMonitorRemovedV2 is emitted when a monitor is disconnected (v2).
 	// Args: MONITORID, MONITORNAME, MONITORDESCRIPTION
-	MonitorRemovedV2 Event = "monitorremovedv2"
+	EventMonitorRemovedV2 Event = "monitorremovedv2"
 
-	// MonitorAdded is emitted when a monitor is connected.
+	// EventMonitorAdded is emitted when a monitor is connected.
 	// Args: MONITORNAME
-	MonitorAdded Event = "monitoradded"
+	EventMonitorAdded Event = "monitoradded"
 
-	// MonitorAddedV2 is emitted when a monitor is connected (v2).
+	// EventMonitorAddedV2 is emitted when a monitor is connected (v2).
 	// Args: MONITORID, MONITORNAME, MONITORDESCRIPTION
-	MonitorAddedV2 Event = "monitoraddedv2"
+	EventMonitorAddedV2 Event = "monitoraddedv2"
 
-	// CreateWorkspace is emitted when a workspace is created.
+	// EventCreateWorkspace is emitted when a workspace is created.
 	// Args: WORKSPACENAME
-	CreateWorkspace Event = "createworkspace"
+	EventCreateWorkspace Event = "createworkspace"
 
-	// CreateWorkspaceV2 is emitted when a workspace is created (v2).
+	// EventCreateWorkspaceV2 is emitted when a workspace is created (v2).
 	// Args: WORKSPACEID, WORKSPACENAME
-	CreateWorkspaceV2 Event = "createworkspacev2"
+	EventCreateWorkspaceV2 Event = "createworkspacev2"
 
-	// DestroyWorkspace is emitted when a workspace is destroyed.
+	// EventDestroyWorkspace is emitted when a workspace is destroyed.
 	// Args: WORKSPACENAME
-	DestroyWorkspace Event = "destroyworkspace"
+	EventDestroyWorkspace Event = "destroyworkspace"
 
-	// DestroyWorkspaceV2 is emitted when a workspace is destroyed (v2).
+	// EventDestroyWorkspaceV2 is emitted when a workspace is destroyed (v2).
 	// Args: WORKSPACEID, WORKSPACENAME
-	DestroyWorkspaceV2 Event = "destroyworkspacev2"
+	EventDestroyWorkspaceV2 Event = "destroyworkspacev2"
 
-	// MoveWorkspace is emitted when a workspace moves to a different monitor.
+	// EventMoveWorkspace is emitted when a workspace moves to a different
+	// monitor.
 	// Args: WORKSPACENAME, MONNAME
-	MoveWorkspace Event = "moveworkspace"
+	EventMoveWorkspace Event = "moveworkspace"
 
-	// MoveWorkspaceV2 is emitted when a workspace moves to a different monitor
-	// (v2).
+	// EventMoveWorkspaceV2 is emitted when a workspace moves to a different
+	// monitor (v2).
 	// Args: WORKSPACEID, WORKSPACENAME, MONNAME
-	MoveWorkspaceV2 Event = "moveworkspacev2"
+	EventMoveWorkspaceV2 Event = "moveworkspacev2"
 
-	// RenameWorkspace is emitted when a workspace is renamed.
+	// EventRenameWorkspace is emitted when a workspace is renamed.
 	// Args: WORKSPACEID, NEWNAME
-	RenameWorkspace Event = "renameworkspace"
+	EventRenameWorkspace Event = "renameworkspace"
 
-	// ActiveSpecial is emitted when the special workspace on a monitor changes.
-	// Closing results in an empty WORKSPACENAME.
+	// EventActiveSpecial is emitted when the special workspace on a monitor
+	// changes. Closing results in an empty WORKSPACENAME.
 	// Args: WORKSPACENAME, MONNAME
-	ActiveSpecial Event = "activespecial"
+	EventActiveSpecial Event = "activespecial"
 
-	// ActiveSpecialV2 is emitted when the special workspace on a monitor
+	// EventActiveSpecialV2 is emitted when the special workspace on a monitor
 	// changes (v2). Closing results in empty WORKSPACEID and WORKSPACENAME.
 	// Args: WORKSPACEID, WORKSPACENAME, MONNAME
-	ActiveSpecialV2 Event = "activespecialv2"
+	EventActiveSpecialV2 Event = "activespecialv2"
 
-	// ActiveLayout is emitted when the layout of the active keyboard changes.
+	// EventActiveLayout is emitted when the layout of the active keyboard
+	// changes.
 	// Args: KEYBOARDNAME, LAYOUTNAME
-	ActiveLayout Event = "activelayout"
+	EventActiveLayout Event = "activelayout"
 
-	// OpenWindow is emitted when a window is opened.
+	// EventOpenWindow is emitted when a window is opened.
 	// Args: WINDOWADDRESS, WORKSPACENAME, WINDOWCLASS, WINDOWTITLE
-	OpenWindow Event = "openwindow"
+	EventOpenWindow Event = "openwindow"
 
-	// CloseWindow is emitted when a window is closed.
+	// EventCloseWindow is emitted when a window is closed.
 	// Args: WINDOWADDRESS
-	CloseWindow Event = "closewindow"
+	EventCloseWindow Event = "closewindow"
 
-	// MoveWindow is emitted when a window moves to a different workspace.
+	// EventMoveWindow is emitted when a window moves to a different workspace.
 	// Args: WINDOWADDRESS, WORKSPACENAME
-	MoveWindow Event = "movewindow"
+	EventMoveWindow Event = "movewindow"
 
-	// MoveWindowV2 is emitted when a window moves to a different workspace
+	// EventMoveWindowV2 is emitted when a window moves to a different workspace
 	// (v2).
 	// Args: WINDOWADDRESS, WORKSPACEID, WORKSPACENAME
-	MoveWindowV2 Event = "movewindowv2"
+	EventMoveWindowV2 Event = "movewindowv2"
 
-	// OpenLayer is emitted when a layer surface is mapped.
+	// EventOpenLayer is emitted when a layer surface is mapped.
 	// Args: NAMESPACE
-	OpenLayer Event = "openlayer"
+	EventOpenLayer Event = "openlayer"
 
-	// CloseLayer is emitted when a layer surface is unmapped.
+	// EventCloseLayer is emitted when a layer surface is unmapped.
 	// Args: NAMESPACE
-	CloseLayer Event = "closelayer"
+	EventCloseLayer Event = "closelayer"
 
-	// Submap is emitted when a keybind submap changes.
+	// EventSubmap is emitted when a keybind submap changes.
 	// Empty value means the default submap.
 	// Args: SUBMAPNAME
-	Submap Event = "submap"
+	EventSubmap Event = "submap"
 
-	// ChangeFloatingMode is emitted when a window toggles its floating mode.
+	// EventChangeFloatingMode is emitted when a window toggles its floating
+	// mode.
 	// Args: WINDOWADDRESS, FLOATING (0 or 1)
-	ChangeFloatingMode Event = "changefloatingmode"
+	EventChangeFloatingMode Event = "changefloatingmode"
 
-	// Urgent is emitted when a window requests an urgent state.
+	// EventUrgent is emitted when a window requests an urgent state.
 	// Args: WINDOWADDRESS
-	Urgent Event = "urgent"
+	EventUrgent Event = "urgent"
 
-	// Screencast is emitted when a client's screencopy state changes. There may
-	// be multiple clients.
+	// EventScreencast is emitted when a client's screencopy state changes.
+	// There may be multiple clients.
 	// Args: STATE (0/1), OWNER (0 = monitor share, 1 = window share)
-	Screencast Event = "screencast"
+	EventScreencast Event = "screencast"
 
-	// WindowTitle is emitted when a window title changes.
+	// EventWindowTitle is emitted when a window title changes.
 	// Args: WINDOWADDRESS
-	WindowTitle Event = "windowtitle"
+	EventWindowTitle Event = "windowtitle"
 
-	// WindowTitleV2 is emitted when a window title changes (v2).
+	// EventWindowTitleV2 is emitted when a window title changes (v2).
 	// Args: WINDOWADDRESS, WINDOWTITLE
-	WindowTitleV2 Event = "windowtitlev2"
+	EventWindowTitleV2 Event = "windowtitlev2"
 
-	// ToggleGroup is emitted when the togglegroup command is used. Returns
+	// EventToggleGroup is emitted when the togglegroup command is used. Returns
 	// state and window handles, e.g. "0,64cea2525760,64cea2522380".
 	// Args: STATE (0/1), WINDOWADDRESS(ES)
-	ToggleGroup Event = "togglegroup"
+	EventToggleGroup Event = "togglegroup"
 
-	// MoveIntoGroup is emitted when a window is merged into a group.
+	// EventMoveIntoGroup is emitted when a window is merged into a group.
 	// Args: WINDOWADDRESS
-	MoveIntoGroup Event = "moveintogroup"
+	EventMoveIntoGroup Event = "moveintogroup"
 
-	// MoveOutOfGroup is emitted when a window is removed from a group.
+	// EventMoveOutOfGroup is emitted when a window is removed from a group.
 	// Args: WINDOWADDRESS
-	MoveOutOfGroup Event = "moveoutofgroup"
+	EventMoveOutOfGroup Event = "moveoutofgroup"
 
-	// IgnoreGroupLock is emitted when the ignoregrouplock setting is toggled.
+	// EventIgnoreGroupLock is emitted when the ignoregrouplock setting is
+	// toggled.
 	// Args: 0/1
-	IgnoreGroupLock Event = "ignoregrouplock"
+	EventIgnoreGroupLock Event = "ignoregrouplock"
 
-	// LockGroups is emitted when lockgroups is toggled.
+	// EventLockGroups is emitted when lockgroups is toggled.
 	// Args: 0/1
-	LockGroups Event = "lockgroups"
+	EventLockGroups Event = "lockgroups"
 
-	// ConfigReloaded is emitted when the config finishes reloading.
+	// EventConfigReloaded is emitted when the config finishes reloading.
 	// Args: empty
-	ConfigReloaded Event = "configreloaded"
+	EventConfigReloaded Event = "configreloaded"
 
-	// Pin is emitted when a window is pinned or unpinned.
+	// EventPin is emitted when a window is pinned or unpinned.
 	// Args: WINDOWADDRESS, PINSTATE
-	Pin Event = "pin"
+	EventPin Event = "pin"
 
-	// Minimized is emitted when an external taskbar-like app requests
+	// EventMinimized is emitted when an external taskbar-like app requests
 	// minimizing a window.
 	// Args: WINDOWADDRESS, 0/1
-	Minimized Event = "minimized"
+	EventMinimized Event = "minimized"
 
-	// Bell is emitted when an app rings the system bell via xdg-system-bell-v1.
-	// Window address parameter may be empty.
+	// EventBell is emitted when an app rings the system bell via
+	// xdg-system-bell-v1. Window address parameter may be empty.
 	// Args: WINDOWADDRESS
-	Bell Event = "bell"
+	EventBell Event = "bell"
 )
 
 // IsKnown returns if event is a known Hyprland event.
@@ -191,19 +196,19 @@ func (e Event) IsKnown() bool {
 }
 
 var allEvents = map[Event]struct{}{
-	Workspace: none, WorkspaceV2: none, FocusedMon: none, FocusedMonV2: none,
-	ActiveWindow: none, ActiveWindowV2: none, Fullscreen: none,
-	MonitorRemoved: none, MonitorRemovedV2: none, MonitorAdded: none,
-	MonitorAddedV2: none, CreateWorkspace: none, CreateWorkspaceV2: none,
-	DestroyWorkspace: none, DestroyWorkspaceV2: none, MoveWorkspace: none,
-	MoveWorkspaceV2: none, RenameWorkspace: none, ActiveSpecial: none,
-	ActiveSpecialV2: none, ActiveLayout: none, OpenWindow: none,
-	CloseWindow: none, MoveWindow: none, MoveWindowV2: none, OpenLayer: none,
-	CloseLayer: none, Submap: none, ChangeFloatingMode: none, Urgent: none,
-	Screencast: none, WindowTitle: none, WindowTitleV2: none, ToggleGroup: none,
-	MoveIntoGroup: none, MoveOutOfGroup: none, IgnoreGroupLock: none,
-	LockGroups: none, ConfigReloaded: none, Pin: none, Minimized: none,
-	Bell: none,
+	EventWorkspace: none, EventWorkspaceV2: none, EventFocusedMonitor: none, EventFocusedMonitorV2: none,
+	EventActiveWindow: none, EventActiveWindowV2: none, EventFullscreen: none,
+	EventMonitorRemoved: none, EventMonitorRemovedV2: none, EventMonitorAdded: none,
+	EventMonitorAddedV2: none, EventCreateWorkspace: none, EventCreateWorkspaceV2: none,
+	EventDestroyWorkspace: none, EventDestroyWorkspaceV2: none, EventMoveWorkspace: none,
+	EventMoveWorkspaceV2: none, EventRenameWorkspace: none, EventActiveSpecial: none,
+	EventActiveSpecialV2: none, EventActiveLayout: none, EventOpenWindow: none,
+	EventCloseWindow: none, EventMoveWindow: none, EventMoveWindowV2: none, EventOpenLayer: none,
+	EventCloseLayer: none, EventSubmap: none, EventChangeFloatingMode: none, EventUrgent: none,
+	EventScreencast: none, EventWindowTitle: none, EventWindowTitleV2: none, EventToggleGroup: none,
+	EventMoveIntoGroup: none, EventMoveOutOfGroup: none, EventIgnoreGroupLock: none,
+	EventLockGroups: none, EventConfigReloaded: none, EventPin: none, EventMinimized: none,
+	EventBell: none,
 }
 
 type (
